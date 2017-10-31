@@ -1,0 +1,97 @@
+<Environment Version="1">
+
+	<DestinyLOS FileName='DestinyLOS-1.11.08.64.exe'>
+	</DestinyLOS>
+
+	<ENVMNT>
+		<!-- Lines surrounded as this line is are comments -->
+		<!-- If ACTIVE='FALSE' then the entry is turned off  -->
+		<!-- If ENTRY='TRUE' then the variable in NAME is set to the value in VALUE  -->
+
+		<ENTRY NAME='DOCUTECH_TEST_MODE' ACTIVE='FALSE' VALUE='N'></ENTRY>
+		<ENTRY NAME='DOCUTECH_LOGIN' ACTIVE='TRUE' VALUE='C463testing'></ENTRY>
+		<ENTRY NAME='DOCUTECH_PASSWORD' ACTIVE='TRUE' VALUE='docum3nts'></ENTRY>
+		<ENTRY NAME='DOCUTECH_TEST_VIEW_REQUEST' VALUE='Y' ACTIVE='TRUE'></ENTRY>
+
+    <!-- MI Insurance Comms-->
+		<ENTRY NAME='UGFilePath' ACTIVE='TRUE' VALUE='\\phm-xdoc-fs01\epicsharedfolders\MI'></ENTRY>
+    <!-- TPI -->
+		<ENTRY NAME='TPIServiceUrl' ACTIVE='TRUE' VALUE='http://phm-los-pcomm01/TPIService/TPI.asmx'></ENTRY>
+		<ENTRY NAME='ACTIVATE_EPIC' VALUE='Y' ACTIVE='TRUE'></ENTRY>
+		<ENTRY NAME='TransformConnectionString' VALUE='Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Epic_Prod;Data Source=phm-los-pdb01\sqllosProd' ACTIVE='TRUE'> </ENTRY>
+		<ENTRY NAME='SetRegulatorConnectEnabled' VALUE='Y' ACTIVE='TRUE'></ENTRY>
+		<!-- Here is the ULDD variable, this changes which delivery method is used -->
+		<ENTRY NAME='ULDDDelivery' VALUE='Y' ACTIVE='TRUE'> </ENTRY>
+		<ENTRY NAME='UseLoanCalculations' ACTIVE='TRUE' VALUE='Y'></ENTRY>
+    <ENTRY NAME='UseULDDCalc' ACTIVE='TRUE' VALUE='Y'></ENTRY>      
+		<ENTRY NAME='MIBestExecution' VALUE='Y' ACTIVE='TRUE'></ENTRY>
+		<ENTRY NAME='AddToMyLoansUponCreation' VALUE='Y' ACTIVE='FALSE'></ENTRY>
+		<ENTRY NAME="PS_REQUIRED_FIELDS" VALUE="//phm-los-pcomm01/Custom/PSRequiredFields.scm" ACTIVE="TRUE"></ENTRY>
+		<ENTRY NAME='MyApplicationFile' VALUE='scheme/custom/MyApplication.scm' ACTIVE='TRUE'>
+			 This entry will tell DestinyLOS the name of a file to load directory for a custom application.
+		</ENTRY>
+		<ENTRY NAME='MyApplicationName' VALUE='My Application' ACTIVE='TRUE'>
+			 This entry will tell DestinyLOS what to label the above utility for DestinyLOS&apos;s Toolbar tip.
+		</ENTRY>
+		<ENTRY NAME='ShowLoanContactEntitiesByName' VALUE='Y' ACTIVE='TRUE'></ENTRY>
+		<ENTRY NAME='UseDUWeb' VALUE='Y' ACTIVE='TRUE'>
+			settings to use DU on the Web
+		</ENTRY>
+		<ENTRY NAME='DU_VERSION' VALUE='3.2' ACTIVE='TRUE'></ENTRY>
+		<ENTRY NAME='SEND_SYNC' VALUE='Y' ACTIVE='TRUE'></ENTRY>
+    <!-- LP -->
+		<ENTRY NAME='LPWebXML' VALUE='Y' ACTIVE='TRUE'></ENTRY>
+		<ENTRY NAME='LPWebURL' VALUE='https://www.loanprospector.com/lp-credit-test/IndexServlet' ACTIVE='TRUE'></ENTRY>
+		<ENTRY NAME='KeepOLDHMDADisposition' VALUE='Y' ACTIVE='TRUE'>
+			 or whatever the file name and path is.
+			 Set this KeepOLDHMDADisposition to Y if the HMDA Type [table Loan_PostClosing field Disposition]
+			 should only be updated if it has not been previously set. If it is desired to change the Disposition
+			 everytime the status of the loan changes to a status which has a HMDA Type associated to it, please
+			 do not use this flag or set it to N
+		</ENTRY>
+
+		<ENTRY NAME='PS_USE_WINDOW' VALUE='Y' ACTIVE='TRUE'></ENTRY>
+		<ENTRY NAME='AlwaysDoZipCodeLookup' VALUE='Y' ACTIVE='TRUE'></ENTRY>
+		<ENTRY NAME="GFConditionSets" VALUE='Y' ACTIVE='TRUE'> 
+		1. Under Options / Good Faith Formula Creator / Security, after selecting a &quot;Security Item&quot; and pressing the &quot;Add&quot; button for HUD items, a &quot;Modify&quot; button was added to the selection list screen because it wasn&apos;t clear that the user had to double click to modify an HUD Reference.
+		2. Once modifying a HUD Reference in item 1. above, the user had to double click on a HUD item in order to &quot;activate&quot; it.  Formerly each item had to be selected individually, now the list is a multi-select list.  Once all items have been selected, when the user presses the OK button they will be added to the system.
+		3. Under Options / Good Faith Formula Creator / Condition Sets, after selecting a &quot;Security Item&quot;, the system would show a list of HUD References and HUD numbers, but no HUD item description.  The Description has been added to the list.
+		4. After selecting an item in number 3. above, the description has been added to the input screen, too.
+		5. The GFE Formula Creator is activated by setting an environment variable called &quot;GFConditionSets&quot; equal to &quot;Y&quot;.  The formulas created with the &quot;GFE Formula Creator&quot; can now be completely turned off and back on by the environment variable.
+		</ENTRY>
+
+		<ENTRY NAME='RecalcPricingQuotes' ACTIVE='TRUE' VALUE='Y'></ENTRY>
+		<ENTRY NAME='HideCrystalReportsPath' ACTIVE='TRUE' VALUE='N'></ENTRY>
+		<ENTRY NAME='TaskProductAssociation' ACTIVE='TRUE' VALUE='Y'>
+      The task product associatio project is designed to associate tasks with specific products
+		</ENTRY>
+		<ENTRY NAME='BypassSourceAndPrintCategories' ACTIVE='TRUE' VALUE='Y'></ENTRY>
+		<ENTRY NAME='OverrideJointAHFactor' ACTIVE='TRUE' VALUE='Y'>
+      When the variable is set to &quot;Y&quot;, the system will no longer use the hardcoded 1.9 factor which is applied to the single A&amp;H table whenever Joint coverage is requested by the user. When set to &quot;Y&quot;, in order to support joint coverage for A&amp;H in the system, joint A&amp;H tables will have to be setup in the Rolodex and the end user will have to select the appropriate coverage when originating the loan.
+		</ENTRY>
+		<ENTRY NAME='OVERRIDE_ACCESS_ON_PUSH_HUD_TO_GFE_BUTTON' ACTIVE='TRUE' VALUE='Y'></ENTRY>
+		<ENTRY NAME='SETMAXTERM' ACTIVE='TRUE' VALUE='D'></ENTRY>
+		
+		<!-- Define Client Custom Settings -->
+		<!-- For New Clients, change everything in this section -->
+    <ENTRY NAME='ENVIRONMENT_NAME' VALUE='Prod' ACTIVE='TRUE'></ENTRY>
+		<ENTRY NAME='HC_DATA_FILE' VALUE='scheme/custom/HighCostData.scm' ACTIVE='TRUE'></ENTRY>
+		<ENTRY NAME='QM_DATA_FILE' VALUE='scheme/custom/QualifiedMortgageData.scm' ACTIVE='TRUE'></ENTRY>
+		<ENTRY NAME='QM_Include_Negative_Points' ACTIVE='TRUE' VALUE='Y'></ENTRY>
+		<ENTRY NAME='ResetStatusOnChannelChange' VALUE='Y' ACTIVE='FALSE'></ENTRY>
+		<ENTRY NAME='ForceKeepingEntitiesWhenChannelChanges' VALUE='Y' ACTIVE='FALSE'></ENTRY>
+		<ENTRY NAME="RestrictConditionDescriptionEdit" VALUE="N" ACTIVE="FALSE"></ENTRY>
+		<ENTRY NAME='DOC_IMAGE_PATH' VALUE='\\phm-xdoc-fs01\epicsharedfolders\DocImages' ACTIVE='TRUE'></ENTRY>
+		<ENTRY NAME='EnableAutoSpecialFeatureCodes' ACTIVE='TRUE' VALUE='Y'/>
+		<ENTRY NAME='ComplianceEaseUserName' VALUE='systemuser@plazahomemortgage.com' ACTIVE='TRUE'></ENTRY>
+    <ENTRY NAME='ComplianceEasePassword' VALUE='Am5tq6PR8Enc7AH3' ACTIVE='TRUE'></ENTRY>
+		<ENTRY NAME='MERSLookbackNumberOfDays' ACTIVE='TRUE' VALUE='0'></ENTRY>
+    <!-- GeoCoder -->
+		<ENTRY NAME='InstantGEOCoderPath' VALUE='\\phm-fs-archv01\apps\IGC' ACTIVE='TRUE'>
+      path for Instant GEOCoder DLL.
+		</ENTRY>
+		<ENTRY NAME='UseInstantGEOCoder' VALUE='Y' ACTIVE='TRUE'></ENTRY>
+		<ENTRY NAME='PassBrokerCredentialsToDULP' ACTIVE='TRUE' VALUE='Y'></ENTRY> 
+	</ENVMNT>
+
+</Environment>
